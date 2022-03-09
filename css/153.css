@@ -21,3 +21,37 @@
     color: aquamarine;
     text-align: center
 }
+
+.p_test{
+    height: auto;
+    width: 500px;
+    background-color: rgba(49, 49, 255, 0.897);
+    font-size: large;
+}
+
+.p_test a{
+    text-decoration: dashed;
+    color: white;
+    margin: 20px;
+    padding: 0px;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 700;
+    font-stretch: normal;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: 微软雅黑, tahoma;
+}
+.p_test a:link{
+    color: white;
+}
+.p_test a:visited{
+    color: white;
+}
+.p_test a:hover{
+    color: red;
+
+}
