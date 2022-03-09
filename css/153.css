@@ -13,3 +13,11 @@
 .p_text2{
     color: green;
 }
+.p_text3{
+    color: blue!important;
+    text-align: left!important;
+}
+.p_text3{
+    color: aquamarine;
+    text-align: center
+}
