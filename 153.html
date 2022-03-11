@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/153.css">
-    
+
     <style>
         .p1 {
             color: rgb(38, 184, 62);
@@ -251,14 +251,6 @@
         .table3:hover {
             border-color: #de55cb;
         }
-
-        #Table4 tr {
-            row-span: 2;
-        }
-
-        #Table4 td {
-            column-span: all;
-        }
     </style>
 
     <hr>
@@ -280,16 +272,17 @@
     </div>
     <hr>
     <style>
-        .text1{
+        .text1 {
             text-align: center;
         }
-        #video2{
+
+        #video2 {
             width: 40%;
             height: 40%;
         }
     </style>
 
-    <p class="p_text1"> 通过link导入外部css: 《link rel="stylesheet" href="css文件的路径"》 
+    <p class="p_text1"> 通过link导入外部css: 《link rel="stylesheet" href="css文件的路径"》
         rel表示当前页面与引入资源的关系</p>
     <link rel="stylesheet" href="/css/153.css">
 
@@ -300,22 +293,7 @@
     <p class="p_text3">外部样式的属性后加入!important 提高优先级</p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <hr>
 
     <p>这是上面代码的实现<br />
         我们有一些 <span data-descr="提示框1">文字</span> 有一些
@@ -353,7 +331,283 @@
         <a href="">军事</a>
         <a href="">财经</a>
     </div>
+
+    <hr>
+
+    <style>
+        .div_test1 {
+            background-color: yellow;
+            font-size: 20px;
+            color: black;
+
+        }
+
+        #div_test1 {
+            background-color: aqua;
+        }
+
+
+
+        div .div_test1 {
+            background-color: #de55cb;
+        }
+    </style>
+
+    <div class="div_test1" id="div_test1">11111111111111111111
+        <p>2222222222222222</p>
+    </div>
+    <p>333333333333333</p>
+
+    <div>
+        <p>44444444444</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .p_text1 {
+            font-size: 30px;
+            font-family: 宋体, 微软雅黑;
+            background-color: white;
+            color: #000000;
+            font-weight: 700;
+
+            text-align: center;
+        }
+
+        .p_text_2 {
+            font-size: 30px;
+            line-height: 1.5;
+            font-family: 楷体, 微软雅黑;
+            background-color: white;
+            color: #000000;
+            font-weight: 300;
+            font-style: oblique;
+            text-align: left;
+        }
+
+        .p_text3 {
+            color: white;
+            font-size: larger;
+            text-align: justify;
+            text-indent: -2px;
+            letter-spacing: 5px;
+
+        }
+    </style>
+
+    <p class="p_text1">文本样式</p>
+    <p class="p_text_2">文本样式2</p>
+    <p class="p_text3">awdawoindiwndiiaawdawdaddddddddddddd
+        awdaaaaaaaaaaaaaawdawoindiwndiiaawdawdadddd
+        <br>
+        dddddddddawdaaaaaaaaaaaaaawd
+        awdawoindiwndiiaawdawdadddddddddddddawdaaaaaaaaaaaaaawdaw
+        awdawoindiwndiiaawdawdadddddddddddddawdaaaaaaaaaaaaa
+    </p>
+
+    <hr>
+
+    <style>
+        .text_title p {
+            height: 50px;
+            width: 200px;
+            color: #ffffffff;
+            background-color: #808080;
+            text-align: center;
+
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 50px;
+
+        }
+
+        .text_main {
+            width: 500px;
+            font-size: 20px;
+            text-indent: 2em;
+        }
+
+        .p_text_larg {
+            font-weight: 700;
+        }
+
+        .p_text_red {
+            color: red;
+        }
+    </style>
+
+
+    <div>
+        <div class="text_title">
+            <p>前锋简介</p>
+            <!-- line-height 设置和高度一样使文本垂直居中  -->
+        </div>
+
+        <p class="text_main">
+            <span class="p_text_larg"> 北京千锋科技有限公司(简称千锋)</span>
+            成立于2011年1月。公司总部位于北京，目前已在
+            <span class="p_text_red">深圳、上海、邓州、广州、大连、武汉、成都、西安、杭州、青岛、重庆、长沙、
+                哈尔滨、北京、太原</span>建立分公司
+        </p>
+        <p class="text_main">前锋旗下现有<span class="p_text_larg">教育培训、人才服务、项目研发、创业孵化</span>等业务。
+            教育培训业务主要为大学生、企业提供技术培训服务；人才服务业务主要为企业提供
+            优秀的互联网研发人才；项目研发部业务主要为企业提供APP解决方案及APP项目研发；
+            创业孵化业务为有创业梦想的学员设立，为其提供创业辅导及天使投资等服务。
+        </p>
+        <p class="text_main">
+            千锋秉承着<span class="p_text_red">“用良心做教育”</span>的理念踏踏实实的做事，<span class="p_text_red">创办7年，现也成为业内口碑好、规模大、
+                教学强的移动互联网研发培训机构。</span>目前累计与国内<span class="p_text_larg">超过8200家</span> IT相关企业建立人才输送合作，
+            与<span class="p_text_larg">562所大学</span> 建立实训就业合作，每年为中国IT企业输送上万名移动开发工程师。计划未来5年内
+            实现年营收过10亿，为中国教育行业贡献一份力量。
+        </p>
+    </div>
+
+    <hr>
+
+    <style>
+        .p_transform {
+            /* 单词首字母大写 */
+            text-transform: capitalize;
+
+            /* 单词首字母小写 */
+            /* text-transform: lowercase; */
+
+            /* 全部大写 */
+            /* text-transform: uppercase; */
+
+            /* 阻止大小写转换 */
+            /* text-transform: none; */
+        }
+    </style>
+
+    <p class="p_transform">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, doloremque
+        repudiandae placeat odit adquos soluta officia nesciunt assumenda perspiciatis
+        corporis obcaecati dicta nisi at consectetur veniam perferendis! Provident, illum!
+    </p>
+
+    <hr>
+
+    <style>
+       .ul_style{
+           list-style: disc inside;
+       }
+    </style>
+
+    <ul class="ul_style">
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+
+    <hr>
+
+    <style>
+        .color{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+        .color2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255,0,0);
+        }
+        .color2 div{
+            height: 50px;
+            width: 50px;
+            background-color: rgba(11, 36, 255, 0.678)
+        }
+        .color3{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(11,36,255,0.678);
+        }
+    </style>
+
+    <div class="color"></div>
+    <div class="color2"><div></div></div>
+    <div class="color3"></div>
+
+
+
+
+    <hr>
+
+
+
+
+    <style>
+        .box1{
+            height: 400px;
+            width: 400px;
+            background-image: url(res/img_cat.jpg);
+
+            /* 图片默认平铺 */
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            background-image: url(res/img_cat_m.jpg);
+            background-repeat: no-repeat;
+            
+            /* 
+            repeat 默认平铺
+            repeat-x x轴上平铺 
+            repeat-y y轴平铺
+            no-repeat 不平铺
+            */
+            
+            background-position: center;
+
+            /* 
+            相当于:
+            background-position-x: center;
+            background-position-y: center; 
+            */
+
+
+        }
+        .box3{
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            background-image: url(res/img_cat_m.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            /* 
+            把背景图像扩展到足够大 完全覆盖背景区域
+            background-size: cover; 
+
+            图像扩展至最大尺寸，以使其宽度和高度完全适应内容区
+            铺不满盒子，留白
+            background-size: contain; 
+
+            */
+
+        }
+
+        .box4{
+            height: 400px;
+            width: 400px;
+            background-image: url(res/img_cat.jpg);
+            background-size: 100% 100%;
+           
+        }
+
+    </style>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
     
+    
+
+
 
 
 
@@ -377,8 +631,8 @@
             log.textContent = e.srcElement.value;
         }
 
-        var a=1 + 2;
-        console.log(a+1);
+        var a = 1 + 2;
+        console.log(a + 1);
 
     </script>
 </body>
