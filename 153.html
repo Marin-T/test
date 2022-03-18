@@ -489,9 +489,9 @@
     <hr>
 
     <style>
-       .ul_style{
-           list-style: disc inside;
-       }
+        .ul_style {
+            list-style: disc inside;
+        }
     </style>
 
     <ul class="ul_style">
@@ -503,30 +503,35 @@
     <hr>
 
     <style>
-        .color{
+        .color {
             width: 100px;
             height: 100px;
             background-color: rgba(255, 0, 0, 0.5);
         }
-        .color2{
+
+        .color2 {
             width: 100px;
             height: 100px;
-            background-color: rgb(255,0,0);
+            background-color: rgb(255, 0, 0);
         }
-        .color2 div{
+
+        .color2 div {
             height: 50px;
             width: 50px;
             background-color: rgba(11, 36, 255, 0.678)
         }
-        .color3{
+
+        .color3 {
             height: 50px;
             width: 50px;
-            background-color: rgb(11,36,255,0.678);
+            background-color: rgb(11, 36, 255, 0.678);
         }
     </style>
 
     <div class="color"></div>
-    <div class="color2"><div></div></div>
+    <div class="color2">
+        <div></div>
+    </div>
     <div class="color3"></div>
 
 
@@ -538,27 +543,28 @@
 
 
     <style>
-        .box1{
+        .box1 {
             height: 400px;
             width: 400px;
             background-image: url(res/img_cat.jpg);
 
             /* 图片默认平铺 */
         }
-        .box2{
+
+        .box2 {
             height: 200px;
             width: 200px;
             background-color: yellow;
             background-image: url(res/img_cat_m.jpg);
             background-repeat: no-repeat;
-            
+
             /* 
             repeat 默认平铺
             repeat-x x轴上平铺 
             repeat-y y轴平铺
             no-repeat 不平铺
             */
-            
+
             background-position: center;
 
             /* 
@@ -569,7 +575,8 @@
 
 
         }
-        .box3{
+
+        .box3 {
             height: 200px;
             width: 200px;
             background-color: yellow;
@@ -590,22 +597,532 @@
 
         }
 
-        .box4{
+        .box4 {
             height: 400px;
             width: 400px;
             background-image: url(res/img_cat.jpg);
             background-size: 100% 100%;
-           
+
         }
 
+        .box5 {
+            height: 400px;
+            width: 400px;
+            background-color: yellow;
+            background-image: url(res/img_cat_m.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
     </style>
 
     <div class="box1"></div>
     <div class="box2"></div>
     <div class="box3"></div>
     <div class="box4"></div>
+    <div class="box5"></div>
+
+    <hr>
+
+
+    <style>
+        .box_s {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            background-image: url(res/img_cat_m.jpg);
+            background-repeat: no-repeat;
+            position: relative;
+            left: 10px;
+            top: 5px;
+
+        }
+    </style>
+
+    <hr>
+    <style>
+        .divbox {
+            display: inline-block;
+        }
+
+        .box_flot1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+
+            z-index: 1;
+        }
+
+        .box_flot2 {
+            width: 110px;
+            height: 110px;
+            background-color: blue;
+
+            float: left;
+
+        }
+
+        .box_flot3 {
+            width: 120px;
+            height: 120px;
+            background-color: green;
+            float: left;
+            position: relative;
+            /* top: -110px;
+            left: 1000;
+            z-index: -1; */
+        }
+
+        .box_f_text {
+            height: 150px;
+            width: 400px;
+            background-color: yellow;
+
+        }
+
+
+        
+
+        .clearflot1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+
+        .clearflot2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+
+        .clearflot3 {
+            width: 250px;
+            height: 120px;
+            background-color: green;
+            clear: left;
+        }
+    </style>
+    <div class="divbox">
+        <div class="box_flot1">box1</div>
+        <div class="box_flot2">box2</div>
+        <div class="box_flot3">box3</div>
+        <div class="box_f_text">文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕</div>
+        <br>
+        <br>
+        <div class="clearflot">
+            <div class="clearflot1"></div>
+            <div class="clearflot2"></div>
+            <div class="clearflot3"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="overflow">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est sed expedita aspernatur tenetur,
+        libero deleniti voluptate repellat. Maxime at explicabo reprehenderit facilis. Natus numquam incidunt animi iure
+        ipsa libero eligendi!</div>
+    <style>
+        .overflow {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(81, 168, 226);
+            /* overflow: visible; 显示溢出 */
+            /* overflow: hidden; 溢出隐藏 裁剪文本 */
+            /* overflow: scroll; 显示滚动条,文本不溢出也会显示滚动条 */
+
+            /* 文本溢出会显示滚动条，不溢出不显示 */
+            overflow: auto;
+
+            /* overflow: inherit; 继承父元素的效果 */
+        }
+    </style>
+
+    <hr>
+
+    <div class="carbox">
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+        <div class="car1">
+            <div class="car1_main">
+                <p class="price">$100.00</p>
+                <p class="date">有效期至:2021-5-1</p>
+            </div>
+            <p class="category">[店铺类][商城类]</p>
+        </div>
+    </div>
+    <style>
+        .carbox {
+            width: 890px;
+            height: 290px;
+            background-color: #b2b2dc;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow: auto;
+            cursor:pointer
+
+        }
+
+        .price,
+        .date,
+        .category {
+            display: flex;
+            justify-content: center;
+        }
+
+        .car1 {
+            width: 163px;
+            height: 112px;
+            background-color: white;
+            border: 1px solid rgb(0, 0, 0);
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+
+        .car1_main {
+            height: 84px;
+            background-color: #cccccc;
+            font-size: 12px;
+        }
+
+        .price {
+            height: 63px;
+            line-height: 63px;
+            display: flex;
+
+            font-weight: 700;
+        }
+
+       
+
+        .category {
+           height: 28px;
+           line-height: 28px;
+        }
+        .car1:hover div {
+            background-color: #4b98fd;
+            color: white;
+        }
+        .car1:hover .category{
+            color: #4b98fd;
+        }
+    </style>
+
+    <hr>
+    <div class="triangle"></div>
+    <style>
+        .triangle {
+            width: 0px;
+            height: 0px;
+            border: 100px solid #000;
+            border-top-color: red;
+            border-bottom-color: yellow;
+            border-left-color: blue;
+            border-right-color: green;
+        }
+    </style>
+
+    <hr>
+
+    <style>
+        .white_space{
+            width: 100px;
+            height: 100px;
+            background-color: #4b98fd;
+            /* 不换行 */
+            white-space: nowrap;        
+            overflow: hidden;
+            /* 文本溢出省略号 */
+            text-overflow: ellipsis;
+
+        }
+    </style>
+    <div class="white_space">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolor assumenda inventore et odio atque sapiente ab, debitis nam. Beatae architecto aspernatur praesentium non excepturi amet aliquid eaque porro officiis.</div>
+
+    <hr>
+
+    <style>
+
+    </style>
+    <div class="box_type1"></div>
+    <div class="box_type2"></div>
+    <div class="box_type3"></div>
+
+    <hr>
+    <style>
+        .type{
+            background-color: #000;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+            /* a标签默认是inline,虽然有颜色但没有实际的上下边距
+            就会被下面的元素顶上来，高度塌陷了 */
+            
+        }
+        .type:hover{
+            background-color: red;
+        }
+    </style>
+    <a href="" class="type">首页</a>
+    <a href="" class="type">国内</a>
+    <a href="" class="type">国际</a>
+    <a href="" class="type">军事</a>
+    <a href="" class="type">财经</a>
+    <div>1111111111</div>
+
+
+
+
+    <hr>
+
+
+
+
+    <style>
+    ul{
+        list-style: none;
+    }
+    .b_top{
+        width: 100%;
+        height: 64px;
+        background-color: #4b98fd;
+        color: #222;
+        box-shadow: 0 2px 10px 0px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        font-size: 14px;
+    }
+    .b_top a{
+        color: #222;
+        text-decoration: none;
+    }
+    
+    .topLeft{
+        width: 35%;
+    } 
+    .topLeft ul{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+    .l_list{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .left-entry{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-shrink: 0;
+        line-height: 30px;
+    }
+    .left-entry li{
+        margin-left: 5px;
+
+       
+    }
+    .L1:hover .list1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list1{
+        display: none;
+        
+        flex-direction: column;
+    }
+
+    .topCenter{
+        width: 30%;
+        height: 100%;
+        background-color: #ffffcc;
+    }
+
+    .topRight{
+        width: 35%;
+        height: 100%;
+        background-color: #b2b2dc;
+    }
     
     
+    </style>
+
+    
+    <div class="b_top">
+        <div class="topLeft">
+            <div class="l_list">
+                <ul class="left-entry">
+                    <li class="L1"><a href="">首页</a>
+                        <div class="list1">
+                            <ul>
+                                <li>番剧</li>
+                                <li>电影</li>
+                                <li>国创</li>
+                                <li>电视剧</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="">番剧</a></li>
+                    <li><a href="">直播</a></li>
+                    <li><a href="">游戏中心</a></li>
+                    <li><a href="">会员购</a></li>
+                    <li><a href="">漫画</a></li>
+                    <li><a href="">赛事</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topCenter"></div>
+
+        <div class="topRight"></div>
+    </div>
+
+
+
+    <hr>
+
+    <style>
+        .list {
+           
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           flex-direction: row;
+           position: relative;
+           
+        }
+        .box-ul{
+            width: 300px;
+            list-style: none;
+            
+        }
+        .item{
+            float: left;
+            width: 150px;
+            text-align: center;
+            background-color: #006eff;
+            color: white;
+            line-height: 40px;
+           
+            
+        }
+        .item a{
+            text-decoration: none;
+            color: white;
+        }
+        .item:hover{
+            background-color: #4b98fd;
+        }
+        .item ul{
+            display: none;
+            background-color: white;
+            color: #000;
+        }
+        .item:hover .item1{
+            position: relative;
+            display: block;
+        }
+        .item1 li:hover {
+            color: #006eff;
+        }
+        
+
+    </style>
+    <div class="list">
+        <ul class="box-ul">
+            <li class="item"><a href="">视频教程</a>
+                <ul class="item1">
+                    <li>全部视频教程</li>
+                    <li>HTML5视频教程</li>
+                    <li>JAVA视频教程</li>
+                    <li>python教程</li>
+                    <li>go教程</li>
+                </ul>
+            </li>
+            <li class="item"><a href="">认证考试</a>
+                <ul class="item1">
+                    <li>111</li>
+                    <li>222</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
 
 
@@ -618,7 +1135,7 @@
 
 
 
-
+    <hr>
     <a href="#top">顶部</a>
     <script>
 
