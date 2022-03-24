@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.con{
+    width: 966px;
+    margin: 0 auto;
+}
+a{
+    
+    text-decoration: none;
+}
+.header{
+    height: 110px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ul{
+    list-style: none;
+}
+
+.logo{
+    width: 265px;
+    height: 110px;
+    background-image: url(../res/img_cat.jpg);
+    background-size: contain;
+}
+
+.header-right{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header-right-ul{
+    height: 44px;
+    line-height: 44px;
+    margin-top: 10px;
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: nowrap;
+    
+}
+.header-right-ul li a{
+    border-right: 1px solid #b2c7ea ;
+    padding: 0 13px;
+    font-size: 13px;
+    color: gray;
+}
+
+
+.header-right-ul .li-last{
+    padding-right: 0;
+    border: 0;
+}
+
+.header-right-ul li .text-red{
+    color: red;
+}
+
+.search{
+    width: 210px;
+    height: 28px;
+    border: 1px solid #d1d1d1;
+    position: relative;
+    top: 15px;
+    left: 320px;
+    border-right: 0;
+}
+ .search .input-left{
+    height: 100%;
+    width: 180px;
+    border: 0;
+    outline: none;
+    position: relative;
+    top: -10px;
+} 
+.search .input-right{
+    width: 25px;
+    height: 28px;
+    background: url(../res/img_cat_m.jpg) no-repeat ;
+}
+
+.nav{
+    height: 53px;
+    line-height: 53px;
+    border: 1px solid #657588;
+    background: #0c345c;
+    color: white;
+}
+.nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.nav ul a{
+    color: white;
+}
+.banner{
+    height: 380px;
+    background: url(../res/1.jpg) no-repeat center;
+}
+
+.list{
+    height: 213px;
+    /* background-color: aquamarine; */
+    margin-top: 51px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.list .list-car{
+    height: 211px;
+    width: 305px;
+    border: 1px solid #cccccc;
+}
+.list-car img{
+    width: 305px;
+    height: 164px;
+    display: block;
+}
+.list-car p{
+    height: 47px;
+    line-height: 47px;
+    padding-left: 28px;
+    font-size: 16px;
+    color: black;
+}
+
+.footer{
+    height: 286px;
+    border: 1px solid #cccccc;
+    background-color: #ececec;
+}
+.footer ul{
+    height: 84px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #c0c0c0;
+    line-height: 28px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    
+}
+.footer ul li{
+   width: 241px;
+   /* padding-left: 30px; */
+   font-size: 12px;
+}
+.footer p{
+    height: 61px;
+    line-height: 61px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    color: #657588;
+}
+.footer a{
+    color: rgb(0, 140, 255);
+}

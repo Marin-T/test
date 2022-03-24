@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局</title>
+    <style>
+        :root {
+            font-size: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* 顶部弹性盒，会换行，两端对齐 */
+        }
+
+        .top>div {
+            width: 49%;
+            /* 两个顶部子容器几乎平分宽度，留一点缝隙 */
+        }
+
+        @media screen and (max-width:768px) {
+            .top>div {
+                width: 100%;
+                /* 媒体查询，当屏幕宽度小于768px时 顶部的每个顶部子容器占满宽度
+            父容器设置了wrap，右盒子会换行 */
+            }
+
+        }
+
+        .top img {
+            width: 100%;
+            /* 图片占满图片容器的宽度 */
+        }
+
+        .top .right {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            /* 同顶部弹性盒 */
+        }
+
+        .top .right div {
+            width: 49%;
+            /* 图片容器平分顶部子容器宽度，留有缝隙 */
+        }
+
+        @media screen and (max-width:450px) {
+            .top .right>div {
+                width: 100%;
+                /* 媒体查询，当屏幕宽度小于450px时 顶部右侧的图片容器占满宽度 */
+            }
+
+        }
+
+        .bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .bottom>div {
+            width: 23%;
+            padding: 5px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 5px 1px rgb(0, 0, 0, 50%);
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width:1024px) {
+            .bottom>div {
+                width: 33%;
+            }
+
+            .bottom>div>p {
+                line-height: 1.4rem;
+                font-size: 1.4rem;
+            }
+
+            .bottom>div>div {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            .bottom>div {
+                width: 48%;
+            }
+
+            .bottom>div>p {
+                line-height: 1.3rem;
+                font-size: 1.3rem;
+            }
+
+            .bottom>div>div {
+                font-size: 1.1rem;
+            }
+
+
+        }
+
+        @media screen and (max-width:450px) {
+            .bottom>div {
+                width: 95%;
+            }
+
+            .bottom>div>p {
+                line-height: 1.2rem;
+                font-size: 1.2rem;
+            }
+
+            .bottom>div>div {
+                font-size: 1.0rem;
+            }
+
+
+        }
+
+        .bottom>div img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .bottom>div>p {
+            line-height: 1.5rem;
+            font-size: 1.5rem;
+
+        }
+
+        .bottom>div>div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12;
+        }
+    </style>
+</head>
+
+<!-- 
+    top:flex,wrap
+        >768px 左 49% 右49%
+        <768px 上 100% 下100
+    bottom:flex,wrap
+        >1024 23%*4
+        768> <1024 33%*3
+        450< 768 48%*2
+        <450 90%*1
+ -->
+
+<body>
+    <div class="top">
+        <div class="left">
+            <img src="img/swiper1.jpeg" alt="">
+        </div>
+        <div class="right">
+            <div>
+                <img src="img/1.png" alt="">
+            </div>
+            <div>
+                <img src="img/2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div>
+            <img src="img/1.jpg" alt="">
+            <p>迷你微型摄影展</p>
+            <div>
+                <p>2016-12-11</p>
+                <p>作者：M</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/1.jpg" alt="">
+            <p>迷你微型摄影展</p>
+            <div>
+                <p>2016-12-11</p>
+                <p>作者：M</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/1.jpg" alt="">
+            <p>迷你微型摄影展</p>
+            <div>
+                <p>2016-12-11</p>
+                <p>作者：M</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/1.jpg" alt="">
+            <p>迷你微型摄影展</p>
+            <div>
+                <p>2016-12-11</p>
+                <p>作者：M</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/1.jpg" alt="">
+            <p>迷你微型摄影展</p>
+            <div>
+                <p>2016-12-11</p>
+                <p>作者：M</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/1.jpg" alt="">
+            <p>迷你微型摄影展</p>
+            <div>
+                <p>2016-12-11</p>
+                <p>作者：M</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/1.jpg" alt="">
+            <p>迷你微型摄影展</p>
+            <div>
+                <p>2016-12-11</p>
+                <p>作者：M</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

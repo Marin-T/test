@@ -15,6 +15,9 @@
 </head>
 
 <body id="top">
+
+
+    <hr>
     <p class="p1">第一段落文本11111111111111111111111 <br>
         1111111111111111111111615
         <hr style="width: auto;"> 11111111111111111
@@ -408,6 +411,35 @@
 
     <hr>
 
+
+
+    <style>
+        .Top {
+            width: 1000px;
+            height: 20px;
+            background-color: #4b98fd;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            /* 黏性定位 粘在窗口中 */
+            position: sticky;
+            top: 5px;
+            left: 5px;
+            /* 相对于在窗口原来位置的固定 */
+        }
+
+        .Top a {
+            color: white;
+            font-weight: 900;
+
+        }
+    </style>
+    <div class="Top"><a href="#top">顶部</a></div>
+
+
+
+    <hr>
+
     <style>
         .text_title p {
             height: 50px;
@@ -682,7 +714,7 @@
         }
 
 
-        
+
 
         .clearflot1 {
             width: 100px;
@@ -831,8 +863,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             overflow: auto;
-            cursor:pointer
-
+            cursor: pointer
         }
 
         .price,
@@ -865,17 +896,19 @@
             font-weight: 700;
         }
 
-       
+
 
         .category {
-           height: 28px;
-           line-height: 28px;
+            height: 28px;
+            line-height: 28px;
         }
+
         .car1:hover div {
             background-color: #4b98fd;
             color: white;
         }
-        .car1:hover .category{
+
+        .car1:hover .category {
             color: #4b98fd;
         }
     </style>
@@ -897,19 +930,21 @@
     <hr>
 
     <style>
-        .white_space{
+        .white_space {
             width: 100px;
             height: 100px;
             background-color: #4b98fd;
             /* 不换行 */
-            white-space: nowrap;        
+            white-space: nowrap;
             overflow: hidden;
             /* 文本溢出省略号 */
             text-overflow: ellipsis;
 
         }
     </style>
-    <div class="white_space">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolor assumenda inventore et odio atque sapiente ab, debitis nam. Beatae architecto aspernatur praesentium non excepturi amet aliquid eaque porro officiis.</div>
+    <div class="white_space">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolor assumenda inventore et
+        odio atque sapiente ab, debitis nam. Beatae architecto aspernatur praesentium non excepturi amet aliquid eaque
+        porro officiis.</div>
 
     <hr>
 
@@ -922,16 +957,17 @@
 
     <hr>
     <style>
-        .type{
+        .type {
             background-color: #000;
             color: white;
             padding: 10px;
             display: inline-block;
             /* a标签默认是inline,虽然有颜色但没有实际的上下边距
             就会被下面的元素顶上来，高度塌陷了 */
-            
+
         }
-        .type:hover{
+
+        .type:hover {
             background-color: red;
         }
     </style>
@@ -951,79 +987,84 @@
 
 
     <style>
-    ul{
-        list-style: none;
-    }
-    .b_top{
-        width: 100%;
-        height: 64px;
-        background-color: #4b98fd;
-        color: #222;
-        box-shadow: 0 2px 10px 0px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        font-size: 14px;
-    }
-    .b_top a{
-        color: #222;
-        text-decoration: none;
-    }
-    
-    .topLeft{
-        width: 35%;
-    } 
-    .topLeft ul{
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        
-    }
-    .l_list{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    .left-entry{
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        flex-shrink: 0;
-        line-height: 30px;
-    }
-    .left-entry li{
-        margin-left: 5px;
+        ul {
+            list-style: none;
+        }
 
-       
-    }
-    .L1:hover .list1{
-        display: flex;
-        flex-direction: column;
-    }
+        .b_top {
+            width: 100%;
+            height: 64px;
+            background-color: #4b98fd;
+            color: #222;
+            box-shadow: 0 2px 10px 0px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            font-size: 14px;
+        }
 
-    .list1{
-        display: none;
-        
-        flex-direction: column;
-    }
+        .b_top a {
+            color: #222;
+            text-decoration: none;
+        }
 
-    .topCenter{
-        width: 30%;
-        height: 100%;
-        background-color: #ffffcc;
-    }
+        .topLeft {
+            width: 35%;
+        }
 
-    .topRight{
-        width: 35%;
-        height: 100%;
-        background-color: #b2b2dc;
-    }
-    
-    
+        .topLeft ul {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+        }
+
+        .l_list {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .left-entry {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            flex-shrink: 0;
+            line-height: 30px;
+        }
+
+        .left-entry li {
+            margin-left: 5px;
+
+
+        }
+
+        .L1:hover .list1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list1 {
+            display: none;
+
+            flex-direction: column;
+        }
+
+        .topCenter {
+            width: 30%;
+            height: 100%;
+            background-color: #ffffcc;
+        }
+
+        .topRight {
+            width: 35%;
+            height: 100%;
+            background-color: #b2b2dc;
+        }
     </style>
 
-    
+
     <div class="b_top">
         <div class="topLeft">
             <div class="l_list">
@@ -1058,51 +1099,73 @@
     <hr>
 
     <style>
-        .list {
-           
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           flex-direction: row;
-           position: relative;
-           
-        }
-        .box-ul{
+        /* .list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        } */
+
+        .box-ul {
             width: 300px;
+            height: 40px;
+            margin: 0 auto;
+            /* overflow: hidden; */
             list-style: none;
-            
+            display: flex;
+            flex-direction: row;
+
+
         }
-        .item{
-            float: left;
+
+
+        .item {
+            /* float: left; */
             width: 150px;
             text-align: center;
             background-color: #006eff;
             color: white;
             line-height: 40px;
-           
-            
+            /* position: relative; */
         }
-        .item a{
+
+
+        .item a {
             text-decoration: none;
             color: white;
         }
-        .item:hover{
+
+        .item:hover {
             background-color: #4b98fd;
         }
-        .item ul{
+
+        .item ul {
             display: none;
             background-color: white;
             color: #000;
+            border: 1px solid #4b98fd;
+
         }
-        .item:hover .item1{
+
+        .item1 {
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+
+        }
+
+        .item:hover .item1 {
             position: relative;
             display: block;
         }
+
         .item1 li:hover {
             color: #006eff;
         }
-        
 
+        .d-p {
+            background-color: #aaaaaa;
+        }
     </style>
     <div class="list">
         <ul class="box-ul">
@@ -1123,6 +1186,601 @@
             </li>
         </ul>
     </div>
+    <div class="d-p">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro dolorem provident officia in accusantium
+            quibusdam error, aliquam praesentium minima repudiandae quisquam iusto id corrupti odio blanditiis explicabo
+            sint sequi neque.
+        </p>
+    </div>
+
+
+    <hr>
+
+
+
+    <style>
+        .b1 {
+            position: relative;
+        }
+
+        .box-p {
+            width: 200px;
+            height: 200px;
+        }
+
+        .bp1 {
+            background-color: red;
+            /* 当父元素有定位时，
+            绝对定位会相对于父元素定位
+            否则相对于浏览器窗口左上角 */
+            position: absolute;
+            left: 20px;
+            z-index: 1;
+
+        }
+
+        .bp2 {
+            width: 180px;
+            height: 180px;
+            background-color: #006eff;
+            position: absolute;
+            /* 绝对定位会脱离文档流、这个位置会空出来
+            造成高度塌陷 */
+        }
+
+        .bp3 {
+
+            background-color: yellow;
+            position: relative;
+            top: 5px;
+
+
+        }
+    </style>
+    <div class="b1">
+        <div class="box-p bp1"></div>
+    </div>
+    <div class="box-p bp2"></div>
+    <div class="box-p bp3"></div>
+
+
+
+
+    <hr>
+
+
+    <style>
+        .b-fixed1 {
+            width: 100%;
+            height: 500px;
+            background-color: #4b98fd;
+        }
+
+        .b-fixed2
+         {
+            width: 50px;
+            height: var(--diy-size, 100px);
+            background-color: slateblue;
+            position: fixed;
+            right: 0;
+            bottom: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 700;
+        }
+        .b-fixed2 a{
+            color: white;
+        }
+    </style>
+    <div class="b-fixed1"></div>
+    <div class="b-fixed2">
+        <a href="#top">顶部</a>
+        <a href="#bottom">底部</a>
+    </div>
+
+
+    <hr>
+
+    <style>
+        .threegle {
+            width: 0px;
+            height: 0px;
+            background-color: #4b98fd;
+            border-top: 50px solid red;
+            border-left: 50px solid blue;
+            border-right: 50px solid rgb(0, 255, 157);
+            border-bottom: 50px solid rgb(145, 255, 0);
+        }
+
+        .threegle2 {
+            width: 0px;
+            height: 0px;
+            border: 50px solid transparent;
+            border-bottom: 50px solid rgb(145, 255, 0);
+
+        }
+
+        .b-nav-t {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 20px;
+            background-color: #4b98fd;
+            color: white;
+        }
+
+        .b-nav-t span {
+            width: 0;
+            height: 0;
+            display: inline-block;
+            border: 5px solid transparent;
+            border-top: 5px solid white;
+            position: relative;
+            top: 2.5px;
+        }
+
+        .b-nav-t:hover .b-span {
+            border: 5px solid transparent;
+            border-bottom: 5px solid white;
+            position: relative;
+            top: -2.5px;
+        }
+    </style>
+    <div class="threegle"></div>
+    <div class="threegle2"></div>
+    <div class="b-nav-t">导航
+        <span class="b-span"></span>
+    </div>
+
+    <hr>
+
+    <style>
+        .b-c1 {
+            width: 100px;
+            height: 100px;
+            background-color: #4b98fd;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            /* margin-bottom: -50px; */
+            /* 定位居中,设置百分比后
+            还需减去盒子长宽的一半 */
+        }
+    </style>
+    <div class="b-c1"></div>
+    <p>Hello World</p>
+
+    <hr>
+    <style>
+        /* root：CSS伪类匹配文档树的根元素 */
+        /* 声明全局css变量 */
+        :root {
+            --diy-blue: blue;
+            --diy-size: 200px;
+        }
+
+        /* 媒体查询 */
+        /* 屏幕宽度在500px以内应用下方样式 */
+        @media screen and (max-width: 500px) {
+            :root {
+                --diy-blue: #4b98fd;
+                --diy-size: 100px;
+            }
+        }
+
+        .b-media {
+            /* 200px 备用变量值，当变量不支持时应用 */
+            width: var(--diy-size, 200px);
+            height: var(--diy-size, 200px);
+            background-color: var(--diy-blue, #4b98fd);
+        }
+    </style>
+    <p>媒体查询</p>
+    <p>当屏幕宽度小于500px样式改变</p>
+    <div class="b-media"></div>
+
+
+    <hr>
+
+    <style>
+        .gradual-color {
+            border-radius: 20px;
+            width: 70%;
+            height: 400px;
+            margin: 50px auto;
+            /* 渐变色 */
+            /* 参数1是角度，后续是颜色color1.color2,color3... */
+            background: linear-gradient(45deg, #CCFFFF, #FFCCCC);
+        }
+    </style>
+
+    <div class="gradual-color"></div>
+
+
+
+    <hr>
+
+
+    <style>
+        .b-img-sprites ul {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .b-img-sprites ul li div {
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+            margin-left: 5px;
+        }
+
+        .s-div1:hover {
+            background: url(/res/timg.jpg) 0 0;
+        }
+
+        .s-div2:hover {
+            background: url(/res/timg.jpg) -100px 0;
+        }
+
+        .s-div3:hover {
+            background: url(/res/timg.jpg) -200px 0;
+        }
+
+        .s-div4:hover {
+            background: url(/res/timg.jpg) 0 -100px;
+        }
+
+        .s-div5:hover {
+            background: url(/res/timg.jpg) -10px -100px;
+        }
+
+        .s-div6:hover {
+            background: url(/res/timg.jpg) -200px -100px;
+        }
+
+        .s-div7:hover {
+            background: url(/res/timg.jpg) 0 -200px;
+        }
+
+        .s-div8:hover {
+            background: url(/res/timg.jpg) -100px -200px;
+        }
+
+        .s-div9:hover {
+            background: url(/res/timg.jpg) -200px -200px;
+        }
+    </style>
+    <div>精灵图</div>
+    <div class="b-img-sprites">
+        <ul>
+            <li>1
+                <div class="s-div1"></div>
+            </li>
+            <li>2
+                <div class="s-div2"></div>
+            </li>
+            <li>3
+                <div class="s-div3"></div>
+            </li>
+            <li>4
+                <div class="s-div4"></div>
+            </li>
+            <li>5
+                <div class="s-div5"></div>
+            </li>
+            <li>6
+                <div class="s-div6"></div>
+            </li>
+            <li>7
+                <div class="s-div7"></div>
+            </li>
+            <li>8
+                <div class="s-div8"></div>
+            </li>
+            <li>9
+                <div class="s-div9"></div>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+    <style>
+        .b-f {
+            width: 200px;
+            height: 200px;
+            background-color: #00F;
+            border: 1px solid;
+        }
+
+        .b-child {
+            width: 100px;
+            height: 100px;
+            background-color: #4b98fd;
+
+            margin-top: 50px;
+        }
+    </style>
+    <div class="b-f">
+        <div class="b-child"></div>
+    </div>
+
+
+    <hr>
+
+    <style>
+        .b-after::first-letter {
+            font-size: 30px;
+            color: red;
+        }
+
+        .b-after::first-line {
+            background-color: #006eff;
+        }
+
+        .p-before::before {
+            content: "::before-content:伪文本，无法选中";
+            background-color: green;
+        }
+
+        .p-after::after {
+            content: "::after-content:伪文本，无法选中";
+            background-color: yellow;
+        }
+    </style>
+    <p>伪元素选择器</p>
+    <p class="p-before">::before选择器</p>
+    <p class="p-after">::after选择器</p>
+    <div class="b-after">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda voluptatum non corporis
+        quia quisquam totam, atque nobis necessitatibus enim quidem aliquid quae distinctio sit impedit dolore earum
+        esse quibusdam quod.</div>
+
+    <hr>
+
+    <p>下拉菜单</p>
+    <select name="" id="" size="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+        <option value="">6</option>
+        <option value="">7</option>
+    </select>
+
+    <hr>
+
+    <p>文本域</p>
+    <textarea name="" id="" cols="30" rows="10" placeholder="输入信息"></textarea>
+
+    <hr>
+    <p>字段集</p>
+    <fieldset>
+        <legend>性别</legend>
+        <input type="radio" name="sex">男
+        <br>
+        <input type="radio" name="sex">女
+    </fieldset>
+
+    <hr>
+    <p>数据列表</p>
+    <input type="text" name="" id="" list="list1">
+    <datalist id="list1">
+        <option value="手机"></option>
+        <option value="手表"></option>
+        <option value="手环"></option>
+        <option value="手镯"></option>
+    </datalist>
+
+    <hr>
+
+    <h2>H5新特性</h2>
+    <p>1.语义化标签，例如header，footer，section，article等</p>
+    <p>语义化的好处</p>
+        <p>标签名贴近功能，代码分块清晰，便于维护。</p>
+        <p>页面结构清晰，便于浏览器和搜索引擎解析。</p>
+        <p>利于搜索引擎爬取；利于SEO(搜索引擎优化)，提高自然排名增加流量。</p>
+    <br>
+    <p>2.音视频，audio video</p>
+    <p>audio和video标签能够很容易的输出音频或视频流，提供便利的获取文件信息的API</p>
+    <br>
+    <p>3.画布 canvas</p>
+    <p>Canvas API 提供了一个通过JavaScript 和 HTML的canvas元素来绘制图形的方式。它可以用于动画、游戏画面、数据可视化、图片编辑以及实时视频处理等方面。</p>
+    <br>
+    <p>4.表单增强</p>
+    <p>calendar、date、time、email、url、search</p>
+    <br>
+    <p>5.本地存储localStorage,sessionStorage</p>
+    <p>localStorage:一直保存在浏览器里，除非用户手动清除</p>
+    <p>sessionStorage:从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。session对象可以用来保存在这段时间内所要求保存的任何数据。基于会话，关掉页面或浏览器就会结束生命周期。</p>
+    <p>大小都是5M</p>
+    <br>
+    <p>6.web worker，websocket</p>
+    <p>webworker：开启一个子线程，为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。用于耗时操作不影响到主线程UI流畅。</p>
+    <p>websocket：客户端与服务端双向数据通信协议，用于解决HTTP协议通信只能由客户端发起的缺陷</p>
+
+
+    <hr>
+    <style>
+        .ul-lev li{
+            /* ul-lev的所有li后代 */
+            border: 1px solid skyblue;
+        }
+        .ul-lev>li{
+            /* ul-lev的亲li */
+            border: 1px solid #00F;
+        }
+
+        .li-lev+li{
+            /* li-lev后面的第一个li兄弟节点 */
+            background-color: #cccccc;
+        }
+        .li-lev2~li{
+            /* li-lev2后面的所有li兄弟节点 */
+            background-color: #808080;
+        }
+        
+    </style>
+    <p>层级选择器</p>
+    <ul class="ul-lev">
+        <li class="li-lev">111
+            <ul>
+                <li>1-1</li>
+                <li>1-2</li>
+                <li>1-3</li>
+            </ul>
+        </li>
+        <li class="li-lev2">222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+
+
+    <hr>
+    <style>
+        .target{
+            width: 100px;
+            height: 100px;
+            background-color: #4b98fd;
+        }
+        .target:target{
+            /* 当url的target处于id的23时应用样式 */
+            
+            background-color: blue;
+        }
+    </style>
+    <p>目标伪类选择器</p>
+    <div class="target" id="23"></div>
+    <a href="#23">111</a>
+
+    <hr>
+    <style>
+        .ul-not li:not(:first-child){
+            /* 选择ul-not的后代li中非首个的元素 */
+            background-color: #006eff;
+        }
+        .ul-not li:nth-child(3){
+            /* 选择ul-not的后代li中的第三个 */
+            background-color: #5692e0;
+        }
+    </style>
+    <p>否定选择器</p>
+    <ul class="ul-not">
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+
+    <hr>
+    <style>
+        .text-shadow{
+            font-size: 20px;
+            /* 参数1 阴影水平位移
+            参数2 阴影垂直位移
+            参数1 阴影颜色 */
+            text-shadow: 5px 1px 1px blue;
+        }
+    </style>
+    <p>文本阴影</p>
+    <div class="text-shadow">文本12313231</div>
+
+    <hr>
+    <style>
+        .b-shadow{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: skyblue;
+            border-radius: 5px;
+            /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+            /* 50%是透明度 */
+            box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 50%);
+        }
+    </style>
+    <p>盒子阴影</p>
+    <div class="b-shadow"></div>
+
+    <hr>
+    <style>
+        .Box{
+            width: 100px;
+            height: 100px;
+            background-color: #CCFFFF;
+            /* 开启怪异盒模式 */
+            /* padding和border不会撑开原有宽高 */
+            /* 中间的content会动态适应padding和border维持原有宽高 */
+            box-sizing: border-box;
+            padding: 20px;
+            border: 10px;
+        }
+    </style>
+    <p>怪异盒模型</p>
+    <div class="Box"></div>
+
+    <hr>
+    <style>
+        .b-flex{
+            width: 610px;
+            height: 610px;
+            margin: 0 auto;
+            border: 1px solid skyblue;
+            display: flex;
+            flex-wrap: wrap;
+            /* 控制折行后的行间距 */
+            /* align-content: space-around; */
+            
+            
+        }
+        .b-flex div,.b-flex span{
+            width: 100px;
+            height: 100px;
+            border: 1px dashed royalblue;
+            
+        }
+        .b-f-f{
+            flex: 1;
+        }
+    </style>
+    <p style="text-align: center;">弹性布局flex</p>
+    <div class="b-flex" title="flex">
+        
+       <span> 子元素默认横向排列，子行内元素会变成块元素</span>
+        <div>111</div>
+        <div class="b-f-f">222</div>
+        <div>333</div>
+        <div>444</div>
+        
+    </div>
+
+    <hr>
+
+    <p>rem等比缩放</p>
+    <p>设置根节点html的font-size为10px或100px</p>
+    <p>后续单位设置成rem，基于根节点的值等比例关系1rem=一倍的font-size</p>
+    <p>多设备的等比例适配，通过js动态改变根节点的font-size值来控制布局的单位比例关系</p>
+    <p>docement.documentElement.style.fontSize=document.documentElement.clientWidth/375*100+"px</p>
+    <p>375是你基于设备宽度的基准值</p>
+    <p>计算其他设备的宽度是你基准设备宽度的多少倍</p>
+    <p>把这个倍数算给font-size的值，实现其他设备宽度是基准设备宽度的多少倍来改变局部的比例关系</p>
+
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+
 
 
 
@@ -1136,7 +1794,7 @@
 
 
     <hr>
-    <a href="#top">顶部</a>
+    <a href="#top" id="bottom">顶部</a>
     <script>
 
         const input = document.querySelector("#input2");
@@ -1150,6 +1808,20 @@
 
         var a = 1 + 2;
         console.log(a + 1);
+
+        for (var i = 0; i < 5; i++) {
+            setTimeout(() => console.log(i), 1000);
+        }
+        for (var i = 0; i < 5; i++) {
+            setTimeout(console.log, 1000 * i, i);
+        }
+        function demo(a) {
+            console.log(a);
+            var a = 1;
+            console.log(a);
+        }
+        demo();
+
 
     </script>
 </body>
