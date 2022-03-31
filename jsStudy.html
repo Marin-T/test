@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 导入外部js -->
+    <script src="js/study.js"></script>
+    <script>
+        // 内联式js
+        // window.onload(alert("asdad"));
+
+
+
+        // console.log(plusOne)
+        let plusOne = function (digits) {
+            for (let i = digits.length - 1; i >= 0; i--) {
+                if (digits[i] === 9) {
+                    digits[i] = 0
+                } else {
+                    digits[i]++
+                    break
+                }
+            }
+            console.log(digits)
+            console.log(...[1])
+            console.log(...digits)
+            return (digits[0] === 0) ? [...[1], ...digits] : digits
+
+        };
+        let testArr = [9, 9, 9, 9]
+        // plusOne(testArr)
+        console.log(plusOne(testArr))
+
+        var arr1 = ['hello']
+        var arr2 = arr1;
+        console.log(arr2)
+
+        var a = 13;
+        console.log(a);
+
+
+        // isNaN() 判断是不是 非数字，非数字返回true 数字返回false
+        //能判断字符串是否纯数字
+        //空的数组也会认为是数字 返回false，数组有值后就认为不是数字了，哪怕里面是数字也返回true
+        //
+        var s_num = "asd123"
+        s_num = [1, 2]
+        s_num = [];
+        var num = 1;
+        console.log(s_num);
+        console.log(typeof (s_num));
+        console.log(isNaN(s_num));
+        console.log(isNaN(num));
+
+
+        var t_arr = ['1', '2'];
+        var s = "text";
+        console.log(s + t_arr);
+
+
+
+        console.log(i);
+        for (var i = 1; i <= 10; i++) {
+            console.log(i);
+            var I1 = 15;
+        }
+        console.log(I1);
+
+        function asd() {
+            var I2 = 16;
+        }
+        asd();
+        // console.log(I2);
+
+
+        console.log(fun());
+        function fun() {
+            console.log('fun');
+        }
+
+        //构造函数创建对象
+        function Star(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+        var ldh = new Star('刘德华', 50)
+        console.log(ldh);
+        ldh.sing('雨');
+        //for in 遍历对象
+        //for in 中 只能obj['k']来访问对象属性的值
+        var obj = {
+            name: 'name-v',
+            age: 33,
+            sleep: () => console.log('Sleep'),
+            showname: function () {
+                console.log(this.name);
+            }
+        }
+        obj.sleep();
+        obj.showname();
+        for (var k in ldh) {
+            console.log(k);
+            console.log(ldh[k]);
+        }
+        for (var k in obj) {
+            console.log(k);
+            console.log(obj[k]);
+        }
+
+        //函数内置对象arguments 存储了函数所有的实参 
+        //arguments 是伪数组 有length属性，按索引方法存储数据，不具有push，pop等方法
+        function fun1() {
+            console.log("fun1的arguments：" + arguments);
+            console.log(arguments);
+        }
+        fun1(1, 2, 3);
+
+        //Date 日期对象
+        var data = new Date(); //没参数 返回当前系统时间
+        console.log(data);
+        var data1 = new Date(2022, 03, 28); //放回4月apr 而不是三月mar
+        console.log(data1);
+        var data2 = new Date("2022-03-28 18:02");
+        console.log(data2);
+
+        //倒计时 案例
+        function conutDown(time) {
+            var nowTime = +new Date();  //返回当前时间的总毫秒数
+            var inputTime = +new Date(time);    //返回输入时间的总毫秒数
+            var times = (inputTime - nowTime) / 1000;     //剩余时间总秒数
+            var d = parseInt(times / 60 / 60 / 24) //天数
+            d = d < 10 ? '0' + d : d;
+            var h = parseInt(times / 60 / 60 % 24) //时数
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(times / 60 % 24) //分数
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(times % 60) //当前秒数
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '时' + m + '分' + s + '秒'
+        }
+        // setInterval(conutDown(),1000,"2022-3-29 20:00:00");
+        console.log(conutDown("2022-3-29 20:00:00"));
+        // var lesstime = setInterval(conutDown("2022-3-29 20:00:00"),1000,);
+
+        //数组检测
+        var arr = [];
+        console.log(arr instanceof Array);
+        console.log(Array.isArray(arr));
+
+        var arr1 = [1, 2, 3];
+        arr1.length += 1;
+        console.log(arr1.length);
+        arr1[arr1.length - 1] = 'aaa'
+        console.log(arr1);
+        arr1.push("bbb");
+        console.log(arr1.length);
+        console.log(arr1);
+
+        //数组排序 sort
+        var arr2 = [13, 4, 77, 1, 7];
+        console.log(arr2.sort((a, b) => a - b)); //升序
+        console.log(arr2.sort((a, b) => b - a)); //降序
+
+        //数组转字符串
+        var arr3 = ["red", "blue", "green"];
+        console.log(arr3.toString()); //red,blue,green
+        console.log(arr3.join());   //red,blue,green
+        console.log(arr3.join("-"));    //red-blue-green
+
+        //字符串对象 基本包装对象 简单数据类型包装成复杂数据类型
+        //js把string number Boolean都包装了
+        var str1 = "andy";
+        console.log(str1.length); //相当于如下
+        // 1. var temp = new String("andy")
+        // 2. str = temp;
+        // 3. temp = null
+
+        //  判断一个字符串 'abcoefoxyozzopp' 中出现次数最多的字符，并统计其次数。
+        // o.a = 1
+        // o.b = 1
+        // o.c = 1
+        // o.o = 4
+        // 核心算法：利用 charAt() 遍历这个字符串
+        // 把每个字符都存储给对象， 如果对象没有该属性，就为1，如果存在了就 +1
+        // 遍历对象，得到最大值和该字符
+        var str2 = 'abcoefoxyozzopp';
+        var o = {};
+        for (let i = 0; i < str2.length; i++) {
+            let chars = str2.charAt(i); // chars 是 字符串的每一个字符
+            if (o[chars]) { // o[chars] 得到的是属性值
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        // 1. 替换字符 replace('被替换的字符', '替换为的字符')  它只会替换第一个字符
+        var str3 = 'andyandy';
+        console.log(str3.replace('a', 'b'));
+        // 有一个字符串 'abcoefoxyozzopp'  要求把里面所有的 o 替换为 *
+        var str3 = 'abcoefoxyozzopp';
+        while (str3.indexOf('o') !== -1) {
+            str3 = str3.replace('o', '*');
+        }
+        console.log(str3);
+
+        //字符串转数组
+        var str4 = 'a,b,c,d';
+        console.log(str4.split(','));
+        // 返回的是一个数组 ['a', 'b', 'c', 'd']
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <input type="button" value="按钮1" onclick="alert('行内式js')">
+    <input type="button" value="prompt输入框" onclick="let a =prompt('输入：','默认值');alert(a)">
+    <div id=""></div>
+</body>
+
+</html>

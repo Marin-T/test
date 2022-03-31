@@ -1256,8 +1256,7 @@
             background-color: #4b98fd;
         }
 
-        .b-fixed2
-         {
+        .b-fixed2 {
             width: 50px;
             height: var(--diy-size, 100px);
             background-color: slateblue;
@@ -1270,7 +1269,8 @@
             color: white;
             font-weight: 700;
         }
-        .b-fixed2 a{
+
+        .b-fixed2 a {
             color: white;
         }
     </style>
@@ -1580,9 +1580,9 @@
     <h2>H5新特性</h2>
     <p>1.语义化标签，例如header，footer，section，article等</p>
     <p>语义化的好处</p>
-        <p>标签名贴近功能，代码分块清晰，便于维护。</p>
-        <p>页面结构清晰，便于浏览器和搜索引擎解析。</p>
-        <p>利于搜索引擎爬取；利于SEO(搜索引擎优化)，提高自然排名增加流量。</p>
+    <p>标签名贴近功能，代码分块清晰，便于维护。</p>
+    <p>页面结构清晰，便于浏览器和搜索引擎解析。</p>
+    <p>利于搜索引擎爬取；利于SEO(搜索引擎优化)，提高自然排名增加流量。</p>
     <br>
     <p>2.音视频，audio video</p>
     <p>audio和video标签能够很容易的输出音频或视频流，提供便利的获取文件信息的API</p>
@@ -1599,30 +1599,32 @@
     <p>大小都是5M</p>
     <br>
     <p>6.web worker，websocket</p>
-    <p>webworker：开启一个子线程，为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。用于耗时操作不影响到主线程UI流畅。</p>
+    <p>webworker：开启一个子线程，为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker
+        线程在后台运行，两者互不干扰。用于耗时操作不影响到主线程UI流畅。</p>
     <p>websocket：客户端与服务端双向数据通信协议，用于解决HTTP协议通信只能由客户端发起的缺陷</p>
 
 
     <hr>
     <style>
-        .ul-lev li{
+        .ul-lev li {
             /* ul-lev的所有li后代 */
             border: 1px solid skyblue;
         }
-        .ul-lev>li{
+
+        .ul-lev>li {
             /* ul-lev的亲li */
             border: 1px solid #00F;
         }
 
-        .li-lev+li{
+        .li-lev+li {
             /* li-lev后面的第一个li兄弟节点 */
             background-color: #cccccc;
         }
-        .li-lev2~li{
+
+        .li-lev2~li {
             /* li-lev2后面的所有li兄弟节点 */
             background-color: #808080;
         }
-        
     </style>
     <p>层级选择器</p>
     <ul class="ul-lev">
@@ -1641,14 +1643,15 @@
 
     <hr>
     <style>
-        .target{
+        .target {
             width: 100px;
             height: 100px;
             background-color: #4b98fd;
         }
-        .target:target{
+
+        .target:target {
             /* 当url的target处于id的23时应用样式 */
-            
+
             background-color: blue;
         }
     </style>
@@ -1658,11 +1661,12 @@
 
     <hr>
     <style>
-        .ul-not li:not(:first-child){
+        .ul-not li:not(:first-child) {
             /* 选择ul-not的后代li中非首个的元素 */
             background-color: #006eff;
         }
-        .ul-not li:nth-child(3){
+
+        .ul-not li:nth-child(3) {
             /* 选择ul-not的后代li中的第三个 */
             background-color: #5692e0;
         }
@@ -1677,7 +1681,7 @@
 
     <hr>
     <style>
-        .text-shadow{
+        .text-shadow {
             font-size: 20px;
             /* 参数1 阴影水平位移
             参数2 阴影垂直位移
@@ -1690,7 +1694,7 @@
 
     <hr>
     <style>
-        .b-shadow{
+        .b-shadow {
             width: 200px;
             height: 200px;
             margin: 0 auto;
@@ -1706,7 +1710,7 @@
 
     <hr>
     <style>
-        .Box{
+        .Box {
             width: 100px;
             height: 100px;
             background-color: #CCFFFF;
@@ -1723,7 +1727,7 @@
 
     <hr>
     <style>
-        .b-flex{
+        .b-flex {
             width: 610px;
             height: 610px;
             margin: 0 auto;
@@ -1732,28 +1736,31 @@
             flex-wrap: wrap;
             /* 控制折行后的行间距 */
             /* align-content: space-around; */
-            
-            
+
+
         }
-        .b-flex div,.b-flex span{
+
+        .b-flex div,
+        .b-flex span {
             width: 100px;
             height: 100px;
             border: 1px dashed royalblue;
-            
+
         }
-        .b-f-f{
+
+        .b-f-f {
             flex: 1;
         }
     </style>
     <p style="text-align: center;">弹性布局flex</p>
     <div class="b-flex" title="flex">
-        
-       <span> 子元素默认横向排列，子行内元素会变成块元素</span>
+
+        <span> 子元素默认横向排列，子行内元素会变成块元素</span>
         <div>111</div>
         <div class="b-f-f">222</div>
         <div>333</div>
         <div>444</div>
-        
+
     </div>
 
     <hr>
@@ -1767,12 +1774,87 @@
     <p>计算其他设备的宽度是你基准设备宽度的多少倍</p>
     <p>把这个倍数算给font-size的值，实现其他设备宽度是基准设备宽度的多少倍来改变局部的比例关系</p>
 
-    
+    <hr>
+
+    <p>vw vh单位</p>
+    <p>100vw = 百分比的适口宽度</p>
+    <p>可以省去js计算rem的font-size</p>
+    <p>例如375px的基准值 width 375px=100vw</p>
+    <p>1px =100/375 约等于0.2667 vw</p>
+
+
+    <hr>
+    <style>
+        .b-grid {
+            width: 600px;
+            height: 600px;
+            /* background-color: #4b98fd; */
+            display: grid;
+            border: 5px solid gray;
+            /* 1 分成3行 每行200px */
+            grid-template-rows: 200px 200px 200px;
+            /* 分成3列 每列200px */
+            grid-template-columns: 200px 200px 200px;
+
+            /* 2 百分比 四行四列 */
+            /* grid-template-rows: 25% 25% 25% 25%; */
+            /* grid-template-columns: 25% 25% 25% 25%; */
+
+            /* 3 repeat */
+            /* grid-template-rows:repeat(3,33.33%); */
+            /* grid-template-columns:repeat(3,33.33%); */
+
+            /* 4 repeat autofill */
+            /* grid-template-rows:repeat(auto-fill,33.33%); */
+            /* grid-template-columns:repeat(auto-fill,33.33%); */
+
+            /* 5 fr片段 */
+            /* grid-template-rows: 100px 1fr 300px; */
+            /* grid-template-columns: 100px 1fr 300px; */
+
+            /* 间距 */
+            /* row-gap: 10px; */
+            /* column-gap: 10px; */
+            /* gap: 10px 10px; */
+
+            /* 区域命名 通过命名相同来合并单元格 */
+            grid-template-areas:
+                "a a ."
+                ". . b"
+                ". . b";
+
+        }
+        .diva{
+            grid-area: a;
+        }
+        .divb{
+            grid-area: b;
+        }
+
+        .b-grid div {
+            border: 1px solid red;
+        }
+        
+    </style>
+    <p>网格布局grid</p>
+    <div class="b-grid">
+        <div class="diva">1</div>
+        <div class="">2</div>
+        <div class="">3</div>
+        <div class="">4</div>
+        <div class="divb">5</div>
+        <div class="">6</div>
+        <div class="">7</div>
+        <!-- <div class="">8</div> -->
+        <!-- <div class="">9</div> -->
+    </div>
 
 
 
-    
-    
+
+
+
+
 
 
 
