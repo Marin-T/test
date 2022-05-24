@@ -361,18 +361,74 @@
         <li>li3</li>
     </ul>
 
-    <p>鼠标事件 </p>
-    <p>鼠标位置
-        <br>
-        窗口可视区x:&nbsp&nbsp<span class="m-cx">cx</span>
-        窗口可视区y:&nbsp&nbsp<span class="m-cy"></span>
-        <br>
-        文档页面x:&nbsp&nbsp<span class="m-px"></span>
-        文档页面y:&nbsp&nbsp<span class="m-py"></span>
-        <br>
-        电脑屏幕x:&nbsp&nbsp<span class="m-sx"></span>
-        电脑屏幕y:&nbsp&nbsp<span class="m-sy"></span>
-    </p>
+    <style>
+        .m-info {
+            border: 1px solid black;
+            width: 280px;
+            height: 150px;
+            position: fixed;
+            top: 50%;
+            right: 0;
+        }
+    </style>
+    <div class="m-info">
+        <p>鼠标事件 </p>
+        <p>鼠标位置
+            <br>
+            窗口可视区x:&nbsp&nbsp<span class="m-cx">cx</span>
+            窗口可视区y:&nbsp&nbsp<span class="m-cy"></span>
+            <br>
+            文档页面x:&nbsp&nbsp<span class="m-px"></span>
+            文档页面y:&nbsp&nbsp<span class="m-py"></span>
+            <br>
+            电脑屏幕x:&nbsp&nbsp<span class="m-sx"></span>
+            电脑屏幕y:&nbsp&nbsp<span class="m-sy"></span>
+        </p>
+    </div>
+
+    
+    <style>
+        .B{
+            width: 200px;
+            height: 100px;
+            position: relative;
+
+        }
+        .B-input{
+            position: absolute;
+            top: 50px;
+        }
+        .con{
+            width: 171px;
+            height: 30px;
+            border: 1px solid rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            padding: 5px 0;
+            font-size: 18px;
+            line-height: 20px;
+            color: #333;
+            position: absolute;
+        }
+        .con::before{
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 40px;
+            left: 15px;
+            border: 8px solid black;
+            border-style: solid dashed dashed;
+            border-color: rgb(255, 255, 255) transparent transparent;
+        }
+    </style>
+    <div class="B">
+        <div class="con">123</div>
+        <input type="text" class="B-input" placeholder="输入您的快递单号">
+    </div>
+
+    <br>
+    <br>
+    <br>
 
 
 
@@ -921,6 +977,15 @@
 
     })
 
+    //鼠标事件对象
+    //e.clientX         返回鼠标相对于浏览器窗口可视区的X坐标
+    //e.clientY	        返回鼠标相对于浏览器窗口可视区的Y坐标
+    //e.pageX（重点）	返回鼠标相对于文档页面的X坐标 IE9+ 支持
+    //e.pageY（重点）	返回鼠标相对于文档页面的Y坐标 IE9+ 支持
+    //e.screenX	        返回鼠标相对于电脑屏幕的X坐标
+    //e.screenY	        返回鼠标相对于电脑屏幕的Y坐标
+
+
     //获取鼠标事件对象 位置
     var m_cx = document.querySelector(".m-cx");
     var m_cy = document.querySelector(".m-cy");
@@ -929,16 +994,35 @@
     var m_sx = document.querySelector(".m-sx");
     var m_sy = document.querySelector(".m-sy");
     // console.log(m_cx);
-    document.addEventListener("mousemove",(e)=>{
-        m_cx.textContent=e.clientX;
-        m_cy.textContent=e.clientY;
-        m_px.textContent=e.pageX;
-        m_py.textContent=e.pageY;
-        m_sx.textContent=e.screenX;
-        m_sy.textContent=e.screenY;
+    document.addEventListener("mousemove", (e) => {
+        m_cx.textContent = e.clientX;
+        m_cy.textContent = e.clientY;
+        m_px.textContent = e.pageX;
+        m_py.textContent = e.pageY;
+        m_sx.textContent = e.screenX;
+        m_sy.textContent = e.screenY;
     })
 
+    //常用键盘事件
+    //onkeyup	    某个键盘按键被松开时触发
+    //onkeydown	    某个键盘按键被按下时触发
+    //onkeypress	某个键盘按键被按下时触发，但是它不识别功能键，比如 ctrl shift 箭头等
+    //如果使用addEventListener 不需要加 on
+    //三个事件的执行顺序是： keydown – keypress — keyup
+    //键盘事件对象属性
+    //keyCode       返回该键值的ASCII值
+    //key           返回键名 输入什么返回什么
 
+    document.addEventListener("keydown", e => {
+        //  console.log(e.key);
+    })
+
+    //模拟快递单号查询
+    var b_input = document.querySelector(".B-input");
+    var con = document.querySelector(".con");
+    b_input.addEventListener("input",()=>{
+        con.innerText = b_input.value;
+    })
 
 
 

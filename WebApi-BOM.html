@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--    DOM	                                BOM
+        文档对象模型	                    浏览器对象模型
+    DOM 就是把 文档 当作一个对象来看待	    把浏览器当作一个对象来看待
+    DOM 的顶级对象是 document	           BOM 的顶级对象是 window
+    DOM 主要学习的是操作页面元素	        BOM 学习的是浏览器窗口交互的一些对象
+    DOM 是 W3C 标准规范	                   BOM是浏览器厂商在各自浏览器上定义的，兼容性较差 -->
+
+    <!--
+                         window
+           ↓        ↓           ↓       ↓       ↓
+        document location navigation screen history 
+
+    window 对象是浏览器的顶级对象，它具有双重角色
+    它是 JS 访问浏览器窗口的一个接口
+    它是一个全局对象。定义在全局作用域中的变量、函数都会变成 window 对象的属性和方法
+    在调用的时候可以省略 window，前面学习的对话框都属于 window 对象方法，如 alert()、prompt()等
+    -->
+    <script>
+        // 定义在全局作用域中的变量会变成window对象的属性
+        var num = 10;
+        console.log(window.num);
+        // 10
+
+        // 定义在全局作用域中的函数会变成window对象的方法
+        function fn() {
+            console.log(11);
+        }
+        fn();// 11
+        window.fn();//11
+
+
+        var name = 10;  //不要用这个name变量,window下有一个特殊属性window.name
+        console.log(window.num); //10
+
+        //页面加载事件 window.onload = function(){}
+        //       window.onload是窗口（页面）加载事件，当文档内容完全加载完成会触发该事件
+        //      （包括图像，脚本文件，CSS文件等），就调用的处理函数
+        //      使用window.onload 可以使js代码写在如何位置
+        //      解决注册按钮点击事件的js代码写在按钮元素前面，事件失效的问题
+        //      因为先执行js代码后有btn元素节点时，事件找不到对象
+        //  window.onload 传统注册事件方式，只能写一次
+        //  如果有多个，会以最后一个window.onload为准
+        window.onload = () => console.log("onload1");
+        window.onload = () => console.log("onload2"); //只执行这个 onload2
+        //  如果使用addEventListener 则没有限制,不会覆盖传统方式，onload2依然输出
+        window.addEventListener("load", () => { console.log("load3"); }) //load3
+        window.addEventListener("load", () => { console.log("load4"); }) //load4
+        //document.addEventListener('DOMContentLoaded',function(){})
+        //  DOMCountentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash等等
+        //  如果页面的图片很多的话, 从用户访问到onload触发可能需要较长的时间
+        //  交互效果就不能实现，必然影响用户的体验，此时用 DOMContentLoaded事件比较合适
+        //  这个方式输出比上面的都要快
+        document.addEventListener('DOMContentLoaded', () => { console.log("load5"); }) //load5
+        //区别
+        //  load等页面内容全部加载完毕，包括页面dom元素，图片，flash，css等
+        //  DOMContentLoaded 是DOM加载完毕，不包含图片 flash css 等就可以执行，加载速度比load更快一些
+    </script>
+
+    <!-- 
+        调整窗口大小事件
+        window.onresize 是调整窗口大小加载事件，当触发时就调用的处理函数
+    -->
+    <script>
+        //window.onresize = function () {console.log("window resize1") }
+        // 或者
+        //window.addEventListener('resize', ()=>console.log("window resize2"));
+        //只要窗口大小发生像素变化，就会触发这个事件
+        //我们经常利用这个事件完成响应式布局。window.innerWidth 当前屏幕的宽度
+        window.addEventListener('load', function () {
+            var div = document.querySelector('.d1');
+            window.addEventListener('resize', function () {
+                // console.log(window.innerWidth);
+                // console.log('变化了');
+                if (window.innerWidth <= 800) {
+                    div.style.display = 'none';
+                } else {
+                    div.style.display = 'block';
+                }
+            })
+        })
+    </script>
+    <div class="d1" style="width: 100px;height: 100px;background-color: aqua;"></div>
+
+
+    <!-- 
+    定时器
+    window 对象给我们提供了两个定时器
+    setTimeout()  只执行一次
+    setInterval() 一直执行
+    -->
+    <script>
+        // 1. setTimeout 
+        // 语法规范：  window.setTimeout(调用函数, 延时时间); 这个调用函数也叫回调函数
+        // 1. 这个window在调用的时候可以省略
+        // 2. 这个延时时间单位是毫秒 但是可以省略，如果省略默认的是0
+        // 3. 这个调用函数可以直接写函数 还可以写 函数名 还有一个写法 '函数名()'
+        // 4. 页面中可能有很多的定时器，我们经常给定时器加标识符 （名字)
+        // setTimeout(function() {
+        //     console.log('时间到了');
+        //
+        // }, 2000);
+        function callback() { console.log('爆炸了') };
+        var timer1 = setTimeout(callback, 3000);
+        var timer2 = setTimeout(callback, 5000);
+        // setTimeout('callback()', 3000); // 我们不提倡这个写法
+    </script>
+
+    <button class="btn-s">点击停止计时器</button>
+    <br>
+    <hr>
+    <div>倒计时
+        <span class="day">0</span>天
+        <span class="hour">1</span>时
+        <span class="minute">2</span>分
+        <span class="second">3</span>秒
+    </div>
+    <hr>
+    <input type="text">
+    <button class="btn1">发送</button>
+    <script>
+        // 清除定时器 clearTimeout() / clearInterval()
+        //clearTimeout()方法取消了先前通过调用 setTimeout()建立的定时器
+        //clearInterval()方法取消了先前通过调用 setInterval() 建立的定时器
+        //window.clearTimeout(timeoutID)
+        //window.clearInterval(timeoutID)
+        var btn = document.querySelector('.btn-s');
+        var timer = setTimeout(()=>console.log("爆炸了2"),3000); //在3s内点击按钮就不会输出
+        var timer2 = setInterval(()=>console.log("爆炸了3"),3000)
+        btn.addEventListener('click',()=> {
+            clearTimeout(timer);
+            // clearTimeout(timer2);
+            clearInterval(timer2);
+        }) //清除定时器
+
+        //倒计时效果
+        var day =document.querySelector(".day");
+        var hour =document.querySelector(".hour");
+        var minute =document.querySelector(".minute");
+        var second =document.querySelector(".second");
+        var inputTime = +new Date("2022-4-15");
+        var timeout = setInterval(conutDown,1000);
+        console.log(timeout);
+        function conutDown() {
+            var nowTime = +new Date();  //返回当前时间的总毫秒数
+            // var inputTime = +new Date(time);    //返回输入时间的总毫秒数
+            var times = (inputTime - nowTime) / 1000;     //剩余时间总秒数
+            var d = parseInt(times / 60 / 60 / 24) //天数
+            d = d < 10 ? '0' + d : d;
+            day.innerHTML=d;
+            var h = parseInt(times / 60 / 60 % 24) //时数
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML=h;
+            var m = parseInt(times / 60 % 24) //分数
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML=m;
+            var s = parseInt(times % 60) //当前秒数
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML=s;
+        }
+        
+        //发生短信间隔 案例
+        var btn1 = document.querySelector(".btn1");
+        // console.log(btn1);
+        var t = 3; //剩余秒数
+        btn1.addEventListener("click",()=>{
+           btn1.disabled = true;
+            var time3 = setInterval(() => {
+                if (t == 0) {
+                    clearInterval(time3);
+                    btn1.disabled = false;
+                    btn1.innerHTML = '发送';
+                    t = 3;
+                }else{
+                    btn1.innerHTML = t + "秒后可再次发送";
+                    t--; 
+                } 
+            }, 1000);    
+        })
+    </script>
+
+
+    <script>
+        //this指向
+        //  this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁
+
+
+        // 1. 全局作用域或者普通函数中this指向全局对象window（ 注意定时器里面的this指向window）
+        console.log(this);
+        function fn() {
+            console.log(this); //window 
+        }
+        fn(); //window.fn()
+        window.setTimeout(function() {
+            console.log(this); //window
+        }, 1000);
+
+        // 2. 方法调用中谁调用this指向谁
+        var o = {
+            sayHi: function() {
+                console.log(this); // this指向的是 o 这个对象
+            }
+        }
+        o.sayHi();
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+                console.log(this); // this指向的是btn这个按钮对象
+
+            })
+        // 3. 构造函数中this指向构造函数的实例
+        function Fun() {
+            console.log(this); // this 指向的是fun 实例对象
+
+        }
+        var fun = new Fun();
+    </script>
+
+
+    <script>
+        // JS执行机制
+        // JS是单线程
+        //JavaScript 语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。这是因为 Javascript 这门脚本语言诞生的使命所致——JavaScript 是为处理页面中用户的交互，以及操作 DOM 而诞生的。比如我们对某个 DOM 元素进行添加和删除操作，不能同时进行。 应该先进行添加，之后再删除。
+        //单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。这样所导致的问题是： 如果 JS 执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞的感觉。
+        //
+        console.log(1);
+            setTimeout(function () {
+                console.log(3);
+            }, 0);
+            console.log(2);
+        //输出 1 2 3
+        
+        //同步和异步
+        //为了解决这个问题，利用多核 CPU 的计算能力，HTML5 提出 Web Worker 标准，允许 JavaScript 脚本创建多个线程
+        //同步:
+        //  前一个任务结束后再执行后一个任务
+        //异步：
+        // 在做这件事的同时，你还可以去处理其他事情
+
+        //同步任务
+        //  同步任务都在主线程上执行，形成一个 执行栈!!!
+        //异步任务
+        //  JS中的异步是通过回调函数实现的
+        //  异步任务有以下类型
+        //  网络模块，ajax
+        //  普通事件，如click,resize等
+        //  资源加载，如load,error等
+        //  定时器，包括setInterval,setTimeout等
+        //  异步任务相关回调函数添加到 任务队列!!!
+        //
+        //      执行栈                  任务/消息队列
+        //  console.log(1)                  fn
+        //  setTimeout(fn, 0)
+        //  console.log(2)
+
+        //先执行执行栈中的同步任务
+        //异步任务(回调函数)放入任务队列中
+        //一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行
+        //对于事件的回调函数，事件不触发，异步进程处理是不会把事件的回调函数放进异步任务队列
+        //如onclick = fn2 ，只有点击了触发事件才会把fn放进异步任务队列里
+        //对于定时器，也是时间到了才会把定时器的回调函数放进异步任务队列里
+        //对于放入任务队列的异步任务，只有主线程的同步任务执行完毕，才把异步任务放到主线程执行
+        //
+        //同步任务放在执行栈中执行，异步任务由异步进程处理放到任务队列中，执行栈中的任务执行完毕会去任务队列中查看是否有异步任务执行，由于主线程不断的重复获得任务、执行任务、再获取任务、再执行，所以这种机制被称为事件循环（ event loop）
+        //同步的任务没有优先级之分，异步执行有优先级，先执行微任务（microtask队列），再执行宏任务（macrotask队列），同级别按顺序执行
+        //- micro-task(微任务)：Promise，process.nextTick
+        //- macro-task(宏任务)：包括整体代码script，setTimeout，setInterval
+        //不同类型的任务会进入对应的Event Queue，比如setTimeout和setInterval会进入相同的Event Queue。
+
+
+
+
+    </script>
+
+    <script>
+        //location对象
+        //window 对象给我们提供了一个 location属性用于获取或者设置窗体的url，并且可以解析url。因为这个属性返回的是一个对象，所以我们将这个属性也称为 location 对象
+        //url
+        //统一资源定位符（uniform resouce locator）==是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的 URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它
+        //protocol://host[:port]/path/[?query]#
+        //http://www.itcast.cn/index.html?name=andy&age=18#link
+        //protocol	通信协议 常用的http,ftp,maito等
+        // host	    (域名) www.itheima.com
+        // port	    端口号，可选
+        // path	    由零或多个'/'符号隔开的字符串
+        // query	参数 以键值对的形式，通过&符号分隔开来
+        // fragment	片段 #后面内容 常见于链接 锚点
+        //
+        //location对象属性
+        //  location.href	    获取或者设置整个URL
+        //  location.host	    返回主机（域名）www.baidu.com
+        //  location.port	    返回端口号，如果未写返回空字符串
+        //  location.pathname	返回路径
+        //  location.search	    返回参数
+        //  location.hash	    返回片段 #后面内容常见于链接 锚点
+        //重点记住： href和search
+    </script>
+
+    <br>
+    <hr>
+    <button class="btn2">点击</button>
+    <div class="div1"></div>
+    <script>
+        //点击5s后跳转
+        var btn2 = document.querySelector('.btn2');
+        var div1 = document.querySelector('.div1');
+        var timer = 5;
+        btn2.addEventListener("click",()=>{
+         setInterval(function() {
+            if (timer == 0) {
+                location.href = 'http://www.baidu.com';
+            } else {
+                div1.innerHTML = '您将在' + timer + '秒钟之后跳转到百度';
+                timer--;
+            }
+        }, 1000);   
+        })       
+    </script>
+    <p>鼠标点击了<span class="m-t" style="color: red;"></span>次</p>
+    <script>
+        var m_t = document.querySelector(".m-t");
+        var t1 = 0;
+        document.addEventListener("click",()=>{
+            t1++;
+            m_t.innerHTML = t1;
+        })
+    </script>
+    
+
+    <button class="btn3">点击</button>
+    <script>
+        //location对象方法
+        //location.assign()	跟href一样，可以跳转页面（也称为重定向页面）
+        // location.replace()	替换当前页面，因为不记录历史，所以不能后退页面
+        // location.reload()	重新刷新按钮f5 ，如果参数为true 强制刷新ctrl+f5不使用缓存重新从服务器取
+        var btn3 = document.querySelector('.btn3');
+        btn3.addEventListener('click', function() {
+            // 记录浏览历史，所以可以实现后退功能
+            // location.assign('http://www.baidu.com');
+            // 不记录浏览历史，所以不可以实现后退功能
+            // location.replace('http://www.baidu.com');
+            //刷新页面
+            location.reload();
+        })
+    </script>
+
+
+    <script>
+        //navigator对象
+        //  navigator 对象包含有关浏览器的信息，它有很多属性
+        //我们常用的是userAgent,该属性可以返回由客户机发送服务器的user-agent头部的值
+        //下面前端代码可以判断用户是用哪个终端打开页面的，如果是用 PC 打开的，我们就跳转到 PC 端的页面，如果是用手机打开的，就跳转到手机端页面
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            // window.location.href = "";     //手机
+        } else {
+            // window.location.href = "";     //电脑
+        }
+    </script>
+
+    <hr>
+    <br>
+    <a href="WebApi-DOM.html">点击我去往DOM页</a>
+    <button class="btn4">前进</button>
+    <script>
+        // history对象
+        //     window 对象给我们提供了一个 history 对象，与浏览器历史记录进行交互
+        //     该对象包含用户（在浏览器窗口中）访问过的 URL
+        // history对象方法	   
+        //   back()	    可以后退功能
+        //  forward()	前进功能
+        //  go(参数 )	前进后退功能，参数如果是 1 前进1个页面 如果是 -1 后退1个页面
+        var btn4 = document.querySelector('.btn4');
+        btn4.addEventListener('click', function() {
+            // history.forward();
+            history.go(1); //前进n个页面，n是参数
+        })
+    </script>
+
+
+    
+
+
+
+</body>
+
+</html>

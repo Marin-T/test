@@ -23,20 +23,28 @@
         flex-direction: row;
     }
     .b1{
-        width: 30%;
+        /* width: 300px; */
+        /* 左侧固定 */
         height: 100%;
         background-color: red;
         display: flex;
         flex-direction: row;
+        /* 盒子在flex中的初始宽度 */
+        flex-basis: 300px;
+        /* 盒子在flex中的缩放 */
+        flex-shrink: 0; 
        
         
     }
     
     .b2{
-        width: 70%;
-        height: 100%;
+        /* 右侧自适应 */
+        /* width: 70%;
+        height: 100%; */
         background-color: aqua;
-        
+        /* 盒子在felx占的份 */
+        flex-grow: 1;
+        /* 左盒子flex-basis初始了宽度，这里的flex-grow 1就占满剩余的大小 */
         
     }
     .b1-1{
